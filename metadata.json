@@ -1,0 +1,6 @@
+{
+  "name": "Kotoku - Sudoku with Kittens",
+  "description": "Cozy cat-themed Sudoku game with kittens, audio effects, daily challenges, and achievements.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+body {
+  margin: 0;
+  background: #FFF9F2;
+  font-family: 'Nunito', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+  -webkit-user-select: none;
+  overflow-x: hidden;
+}
+
+.font-baloo {
+  font-family: 'Baloo 2', cursive, sans-serif;
+}
+
+@keyframes cell-shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-5px); }
+  40%, 80% { transform: translateX(5px); }
+}
+
+@keyframes cell-correct-pulse {
+  0% { transform: scale(0.92); }
+  50% { transform: scale(1.12); }
+  100% { transform: scale(1); }
+}
+
+@keyframes cell-hint-pulse {
+  0%, 100% { transform: scale(1); box-shadow: inset 0 0 0 2px #F0A02A; }
+  50% { transform: scale(1.06); box-shadow: inset 0 0 0 3px #F0A02A, 0 0 14px rgba(240, 160, 42, 0.8); }
+}
+
+@keyframes flame-sway {
+  0%, 100% { transform: rotate(-6deg) scale(1); }
+  50% { transform: rotate(6deg) scale(1.14); }
+}
+
+@keyframes win-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+/* 1. Milestone Golden Glow */
+@keyframes milestone-glow {
+  0%, 100% { box-shadow: 0 0 0 rgba(240, 160, 42, 0); transform: scale(1); }
+  50% { box-shadow: 0 0 26px rgba(240, 160, 42, 0.75), inset 0 0 12px rgba(240, 160, 42, 0.35); transform: scale(1.02); }
+}
+
+/* 2. Level Up Bounce & Golden Ring Flash */
+@keyframes level-up-bounce {
+  0% { transform: scale(1); }
+  35% { transform: scale(1.22); filter: drop-shadow(0 0 8px rgba(240, 160, 42, 0.9)); }
+  70% { transform: scale(0.94); }
+  100% { transform: scale(1); }
+}
+
+@keyframes ring-flash {
+  0%, 100% { filter: drop-shadow(0 0 0 rgba(255, 215, 0, 0)); stroke: #F0A02A; }
+  50% { filter: drop-shadow(0 0 14px rgba(255, 215, 0, 0.95)); stroke: #FFD700; stroke-width: 12; }
+}
+
+/* 3. Cat Mode Flip / Crossfade */
+@keyframes cat-cell-flip {
+  0% { transform: scale(1) rotateY(0deg); opacity: 1; }
+  50% { transform: scale(0.85) rotateY(90deg); opacity: 0.2; }
+  100% { transform: scale(1) rotateY(0deg); opacity: 1; }
+}
+
+/* 4. Achievement Toast Slide In */
+@keyframes toast-slide-in {
+  0% { transform: translateY(-24px) scale(0.92); opacity: 0; }
+  100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+.animate-cell-shake {
+  animation: cell-shake 0.4s ease-in-out;
+}
+
+.animate-cell-correct {
+  animation: cell-correct-pulse 0.28s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.animate-cell-hint {
+  animation: cell-hint-pulse 0.65s ease-in-out infinite;
+  z-index: 10;
+  position: relative;
+}
+
+.animate-flame {
+  display: inline-block;
+  transform-origin: bottom center;
+  animation: flame-sway 1.6s ease-in-out infinite;
+}
+
+.animate-win-card {
+  animation: win-pulse 2.2s ease-in-out infinite;
+}
+
+.animate-milestone-glow {
+  animation: milestone-glow 1.8s ease-in-out 3;
+}
+
+.animate-level-up-text {
+  animation: level-up-bounce 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.animate-ring-flash {
+  animation: ring-flash 1.2s ease-in-out;
+}
+
+.animate-cat-flip {
+  animation: cat-cell-flip 0.32s ease-in-out;
+}
+
+.animate-toast-enter {
+  animation: toast-slide-in 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
